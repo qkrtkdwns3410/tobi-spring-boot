@@ -1,5 +1,10 @@
-package com.company.tobispringboot;/**
- *packageName    : com.company.tobispringboot
+package com.company.tobispringboot;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * packageName    : com.company.tobispringboot
  * fileName       : HelloControlle
  * author         : ipeac
  * date           : 24. 6. 14.
@@ -8,7 +13,12 @@ package com.company.tobispringboot;/**
  * DATE              AUTHOR             NOTE
  * -----------------------------------------------------------
  * 24. 6. 14.        ipeac       최초 생성
- */public class HelloControlle {
-
-      
+ */
+@RestController
+public class HelloController {
+    
+    @GetMapping("/hello")
+    public String hello(String name) {
+        return name + ", world!";
+    }
 }
