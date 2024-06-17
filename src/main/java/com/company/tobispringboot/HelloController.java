@@ -1,7 +1,6 @@
 package com.company.tobispringboot;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import java.util.Objects;
 
 /**
  * packageName    : com.company.tobispringboot
@@ -14,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
  * -----------------------------------------------------------
  * 24. 6. 14.        ipeac       최초 생성
  */
-@RestController
 public class HelloController {
     
-    @GetMapping("/hello")
     public String hello(String name) {
-        return name + ", world!";
+        SimpleHelloService helloService = new SimpleHelloService();
+        
+        return helloService.sayHello(Objects.requireNonNull(name));
     }
 }
