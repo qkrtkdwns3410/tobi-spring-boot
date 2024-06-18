@@ -2,19 +2,15 @@ package com.company.tobispringboot;
 
 /**
  * packageName    : com.company.tobispringboot
- * fileName       : SimpleHelloService
+ * fileName       : HelloService
  * author         : ipeac
- * date           : 24. 6. 17.
+ * date           : 24. 6. 18.
  * description    :
  * ===========================================================
  * DATE              AUTHOR             NOTE
  * -----------------------------------------------------------
- * 24. 6. 17.        ipeac       최초 생성
+ * 24. 6. 18.        ipeac       최초 생성
  */
-public class SimpleHelloService implements HelloService {
-    
-    @Override
-    public String hello(String name) {
-        return "hello, " + name;
-    }
+public interface HelloService {
+    public String hello(String name);
 }
