@@ -1,8 +1,7 @@
 package com.company.tobispringboot;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Objects;
 
@@ -17,7 +16,7 @@ import java.util.Objects;
  * -----------------------------------------------------------
  * 24. 6. 14.        ipeac       최초 생성
  */
-@RequestMapping("/hello")
+@RestController
 public class HelloController {
     private final HelloService helloService;
     
@@ -25,9 +24,12 @@ public class HelloController {
         this.helloService = helloService;
     }
     
-    @GetMapping
-    @ResponseBody
+    @GetMapping("/hello")
     public String hello(String name) {
-        return helloService.hello(Objects.requireNonNull(name));
+        if (Objects.isNull(name) || name.isEmpty()) {
+            throw new IllegalArgumentException("name is empty");
+        }
+        
+        return helloService.hello(name);
     }
 }

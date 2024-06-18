@@ -12,5 +12,5 @@ package com.company.tobispringboot;
  * 24. 6. 18.        ipeac       최초 생성
  */
 public interface HelloService {
-    public String hello(String name);
+    String hello(String name);
 }
