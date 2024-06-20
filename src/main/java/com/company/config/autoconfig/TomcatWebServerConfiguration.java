@@ -1,9 +1,9 @@
 package com.company.config.autoconfig;
 
+import com.company.config.MyAutoConfiguration;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * packageName    : com.company.config
@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
  * -----------------------------------------------------------
  * 24. 6. 19.        ipeac       최초 생성
  */
-@Configuration
+@MyAutoConfiguration
 public class TomcatWebServerConfiguration {
     @Bean
     public ServletWebServerFactory servletWebServerFactory() {
