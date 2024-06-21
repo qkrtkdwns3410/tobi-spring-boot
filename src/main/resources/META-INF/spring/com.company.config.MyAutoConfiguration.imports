@@ -1,2 +1,3 @@
 com.company.config.autoconfig.TomcatWebServerConfiguration
+com.company.config.autoconfig.JettyWebServerConfiguration
 com.company.config.autoconfig.DispatcherServletConfiguration
