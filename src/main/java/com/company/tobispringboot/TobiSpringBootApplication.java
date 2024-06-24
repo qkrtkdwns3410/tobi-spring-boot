@@ -2,6 +2,7 @@ package com.company.tobispringboot;
 
 import com.company.config.MySpringBootApplication;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 
@@ -17,6 +18,6 @@ public class TobiSpringBootApplication {
     }
     
     public static void main(String[] args) {
-        MySpringApplication.run(TobiSpringBootApplication.class, args);
+        SpringApplication.run(TobiSpringBootApplication.class, args);
     }
 }
