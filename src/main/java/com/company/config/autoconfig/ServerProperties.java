@@ -1,6 +1,6 @@
 package com.company.config.autoconfig;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 /**
  * packageName    : com.company.config.autoconfig
@@ -13,11 +13,11 @@ import org.springframework.beans.factory.annotation.Value;
  * -----------------------------------------------------------
  * 24. 6. 24.        ipeac       최초 생성
  */
+@Component
+@MyConfigurationProperties(prefix = "server")
 public class ServerProperties {
-    @Value("${contextPath:}")
     private String contextPath;
     
-    @Value("${port:8080}")
     private int port;
     
     public String getContextPath() {
