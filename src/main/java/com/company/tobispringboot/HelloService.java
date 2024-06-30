@@ -13,4 +13,6 @@ package com.company.tobispringboot;
  */
 public interface HelloService {
     String hello(String name);
+    
+    int countOf(String name);
 }

@@ -1,6 +1,0 @@
-com.company.config.autoconfig.DataSourceConfig
-com.company.config.autoconfig.PropertyPostProcessorConfig
-com.company.config.autoconfig.PropertyPlaceholderConfig
-com.company.config.autoconfig.TomcatWebServerConfiguration
-com.company.config.autoconfig.JettyWebServerConfiguration
-com.company.config.autoconfig.DispatcherServletConfiguration
