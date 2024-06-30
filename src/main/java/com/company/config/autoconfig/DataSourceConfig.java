@@ -2,11 +2,11 @@ package com.company.config.autoconfig;
 
 import com.company.config.ConditionalMyOnClass;
 import com.company.config.MyAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 import javax.sql.DataSource;
+import java.sql.Driver;
 
 /**
  * packageName    : com.company.config.autoconfig
@@ -21,13 +21,16 @@ import javax.sql.DataSource;
  */
 @MyAutoConfiguration
 @ConditionalMyOnClass("org.springframework.jdbc.core.JdbcOperations")
+@EnableMyConfigurationProperties(MyDataSourceProperties.class)
 public class DataSourceConfig {
     @Bean
-    DataSource dataSource(DataSourceProperties properties) {
+    DataSource dataSource(MyDataSourceProperties properties) throws ClassNotFoundException {
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
         
-        dataSource.setDriverClass(org.h2.Driver.class);
-        dataSource.setUrl("jdbc:h2:mem:testdb");
+        dataSource.setDriverClass((Class<? extends Driver>) Class.forName(properties.getDriverClassName()));
+        dataSource.setUrl(properties.getUrl());
+        dataSource.setUsername(properties.getUsername());
+        dataSource.setPassword(properties.getPassword());
         
         return dataSource;
     }
